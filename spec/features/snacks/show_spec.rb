@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe '' do
+RSpec.describe 'snack show page' do
   before :each do
     @snack1 = Snack.create!(name: 'Snickers', price: 1.00)
     @snack2 = Snack.create!(name: 'Poptart', price: 3.00)
