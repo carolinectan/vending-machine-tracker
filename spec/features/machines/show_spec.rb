@@ -31,7 +31,7 @@ RSpec.describe 'machines show page' do
 
   it 'can display the average price for all of the snack in that machine' do
     visit "/machines/#{@machine.id}"
-save_and_open_page
+
     expect(page).to have_content("Average Price: $1.67")
   end
 end
