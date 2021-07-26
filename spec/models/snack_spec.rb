@@ -6,8 +6,8 @@ RSpec.describe Snack, type: :model do
   end
 
   describe 'relationships' do
-    it { should have_many(:snack_machines) }
-    it { should have_many(:machines).through(:snack_machines) }
+    it { should have_many(:vending_machines) }
+    it { should have_many(:machines).through(:vending_machines) }
   end
 
   # before :each do

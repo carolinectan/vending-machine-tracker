@@ -1,6 +1,6 @@
-class CreateSnackMachines < ActiveRecord::Migration[5.2]
+class CreateVendingMachines < ActiveRecord::Migration[5.2]
   def change
-    create_table :snack_machines do |t|
+    create_table :vending_machines do |t|
       t.references :snack, foreign_key: true
       t.references :machine, foreign_key: true
 

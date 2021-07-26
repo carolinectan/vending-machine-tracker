@@ -8,7 +8,7 @@ RSpec.describe Machine, type: :model do
   describe 'relationships' do
     it { should belong_to :owner }
 
-    it { should have_many(:snack_machines) }
-    it { should have_many(:snacks).through(:snack_machines) }
+    it { should have_many(:vending_machines) }
+    it { should have_many(:snacks).through(:vending_machines) }
   end
 end
