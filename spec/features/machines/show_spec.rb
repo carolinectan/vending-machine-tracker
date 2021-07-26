@@ -7,8 +7,8 @@ RSpec.describe 'machines show page' do
     @machine = @owner.machines.create!(location: 'Perimeter Mall')
 
     @snack1 = Snack.create!(name: 'Snickers', price: 1.00)
-    @snack2 = Snack.create!(name: 'Poptart', price: 2.50)
-    @snack3 = Snack.create!(name: 'Honey Bun', price: 1.75)
+    @snack2 = Snack.create!(name: 'Poptart', price: 3.00)
+    @snack3 = Snack.create!(name: 'Honey Bun', price: 1.00)
 
     @vending_machine1 = @machine.snacks << @snack1
     @vending_machine2 = @machine.snacks << @snack2
@@ -20,9 +20,18 @@ RSpec.describe 'machines show page' do
 
     expect(page).to have_content(@snack1.name)
     expect(page).to have_content(@snack1.price)
+    expect(page).to have_content('$1.00')
     expect(page).to have_content(@snack2.name)
     expect(page).to have_content(@snack2.price)
+    expect(page).to have_content('$3.00')
     expect(page).to have_content(@snack3.name)
     expect(page).to have_content(@snack3.price)
+    expect(page).to have_content('$1.00')
+  end
+
+  it 'can display the average price for all of the snack in that machine' do
+    visit "/machines/#{@machine.id}"
+save_and_open_page
+    expect(page).to have_content("Average Price: $1.67")
   end
 end

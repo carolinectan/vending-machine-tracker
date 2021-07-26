@@ -4,4 +4,8 @@ class Snack < ApplicationRecord
 
   has_many :vending_machines
   has_many :machines, through: :vending_machines
+
+  def self.average_price
+    average(:price)
+  end
 end

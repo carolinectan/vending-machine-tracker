@@ -2,5 +2,9 @@
 
 <% @machine.snacks.each do |snack| %>
   <p><%= snack.name %></p>
-  <p><%= snack.price %></p>
+  <p>$<%= '%.2f' % snack.price %></p>
+  <!-- <p><%= number_to_currency(snack.price) %></p> -->
+
 <% end %>
+
+<p>Average Price: $<%= '%.2f' % @machine.snacks.average_price %></p>
